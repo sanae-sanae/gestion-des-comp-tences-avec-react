@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(267, 84%, 66%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(220, 91%, 60%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(60, 9.1%, 97.8%);
+  --warning: hsl(43, 96%, 56%);
+  --warning-foreground: hsl(60, 9.1%, 97.8%);
+  --danger: hsl(0, 84.2%, 60.2%);
+  --danger-foreground: hsl(60, 9.1%, 97.8%);
+  --info: hsl(199, 89%, 48%);
+  --info-foreground: hsl(60, 9.1%, 97.8%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(267, 84%, 66%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(60, 9.1%, 97.8%);
+  --warning: hsl(43, 96%, 56%);
+  --warning-foreground: hsl(60, 9.1%, 97.8%);
+  --danger: hsl(0, 84.2%, 60.2%);
+  --danger-foreground: hsl(60, 9.1%, 97.8%);
+  --info: hsl(199, 89%, 48%);
+  --info-foreground: hsl(60, 9.1%, 97.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(267, 84%, 66%) 0%, hsl(220, 91%, 60%) 100%);
+  }
+  
+  .success-gradient {
+    background: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(142, 76%, 46%) 100%);
+  }
+  
+  .danger-gradient {
+    background: linear-gradient(135deg, hsl(0, 84.2%, 60.2%) 0%, hsl(0, 84.2%, 50.2%) 100%);
+  }
+  
+  .warning-gradient {
+    background: linear-gradient(135deg, hsl(43, 96%, 56%) 0%, hsl(43, 96%, 46%) 100%);
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .competency-card {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .competency-card:hover {
+    border-color: hsl(267, 84%, 66%);
+    transform: translateY(-2px);
+  }
+  
+  .sub-competency-item {
+    transition: all 0.3s ease;
+  }
+  
+  .sub-competency-item:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateX(5px);
+  }
+  
+  .bg-success {
+    background-color: hsl(var(--success));
+  }
+  
+  .text-success {
+    color: hsl(var(--success));
+  }
+  
+  .bg-danger {
+    background-color: hsl(var(--danger));
+  }
+  
+  .text-danger {
+    color: hsl(var(--danger));
+  }
+  
+  .bg-warning {
+    background-color: hsl(var(--warning));
+  }
+  
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+  
+  .bg-info {
+    background-color: hsl(var(--info));
+  }
+  
+  .text-info {
+    color: hsl(var(--info));
+  }
+  
+  .bg-success\/10 {
+    background-color: hsl(var(--success) / 0.1);
+  }
+  
+  .bg-danger\/10 {
+    background-color: hsl(var(--danger) / 0.1);
+  }
+  
+  .bg-warning\/10 {
+    background-color: hsl(var(--warning) / 0.1);
+  }
+  
+  .bg-info\/10 {
+    background-color: hsl(var(--info) / 0.1);
+  }
+}
